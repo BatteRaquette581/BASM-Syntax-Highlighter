@@ -4,6 +4,7 @@
   "description": "A simple BASM syntax highlighter.",
   "version": "0.0.1",
   "icon": "basm.png",
+  "repository": "https://github.com/BatteRaquette581/BASM-Syntax-Highlighter/",
   "engines": {
     "vscode": "^1.84.0"
   },
