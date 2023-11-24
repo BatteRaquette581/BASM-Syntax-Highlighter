@@ -1,0 +1,80 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "BASM",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#aluops"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#fregs"
+		},
+		{
+			"include": "#tregs"
+		},
+		{
+			"include": "#cond"
+		},
+		{
+			"include": "#number"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.basm",
+				"match": "\\b(imd|alu|cop|cod|IMD|ALU|COP|COD)\\b"
+			}]
+		},
+		"aluops": {
+			"patterns": [{
+				"name": "entity.name.selector",
+				"match": "\\b(add|sub|neg|inc|dec|pass|and|or|xor|not|one|ars|los|rot|roc|zer|ADD|SUB|NEG|INC|DEC|PASS|AND|OR|XOR|NOT|ONE|ARS|LOS|ROT|ROC|ZER)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name": "comment.block.basm"
+				},
+				{
+					"begin": "//",
+					"end": "$",
+					"name": "comment.line.double-slash.basm"
+				}
+			]
+		},
+		"fregs": {
+			"patterns": [{
+				"name": "string",
+				"match": "\\b(frm|fr1|fr2|fr3|fr4|fr5|fr6|fin|FRM|FR1|FR2|FR3|FR4|FR5|FR6|FIN)\\b"
+			}]
+		},
+		"tregs": {
+			"patterns": [{
+				"name": "variable",
+				"match": "\\b(trm|tr1|tr2|tr3|tr4|tr5|tr6|tou|TRM|TR1|TR2|TR3|TR4|TR5|TR6|TOU)\\b"
+			}]
+		},
+		"cond": {
+			"patterns": [{
+				"name": "support",
+				"match": "\\b(nvr|eq0|lt0|le0|als|neq|ge0|gt0|NVR|EQ0|LT0|LE0|ALS|NEQ|GE0|GT0)\\b"
+			}]
+		},
+		"number": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "\\b[0-9]{1,}\\b"
+			}]
+		}
+	},
+	"scopeName": "source.basm"
+}

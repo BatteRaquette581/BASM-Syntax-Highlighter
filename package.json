@@ -1,0 +1,26 @@
+{
+  "name": "basm-syntax-highlighting",
+  "displayName": "BASM Syntax Highlighting",
+  "description": "A simple BASM syntax highlighter.",
+  "version": "0.0.1",
+  "icon": "basm.png",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "basm",
+      "aliases": ["BASM", "basm"],
+      "extensions": [".basm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "basm",
+      "scopeName": "source.basm",
+      "path": "./syntaxes/basm.tmLanguage.json"
+    }]
+  }
+}
